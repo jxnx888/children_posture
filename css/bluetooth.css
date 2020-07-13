@@ -1,0 +1,7 @@
+.nav {line-height: .44rem;height: .44rem;color:#333333;font-size:.17rem;border-bottom:1px solid #ECECEC;}
+.nav .jump_next{color:#9EA6B1;font-size:.15rem;}
+.this_title {padding:0;}
+.note {color:#9EA6B1;font-size: .12rem; margin: .3rem auto;}
+.bluetooth_img {width:100%;height:1.3rem;max-height: 100%;margin: 1.13rem auto; background-image: url(../img/posture/bluetooth_connect.png);background-repeat: no-repeat;background-size: contain;background-position: center;}
+.later_connect {color:#333333;font-size:.15rem;height:.4rem;line-height: .4rem;}
+.btn_start{width:.92rem;height:.4rem;line-height: .4rem;font-size:.15rem;background:#0076FF;border-radius:.2rem;color: #FFF;text-align: center;float: right;}

@@ -1,0 +1,54 @@
+{
+	"data": {
+		"高低肩矫正器": [{
+				"title": "JDKS-5144-DS",
+				"name": "JDKS-5144-DS",
+				"url": "../img/posture/equipment.png",
+				"detail": "超强续航"
+			},
+			{
+				"title": "JDKS-5240-DS",
+				"name": "JDKS-5240-DS",
+				"url": "../img/posture/equipment.png",
+				"detail": "全新设计，传感更灵敏"
+			},
+			{
+				"title": "JDKS-6240-DS",
+				"name": "JDKS-6240-DS",
+				"url": "../img/posture/equipment.png",
+				"detail": "全新设计，传感更灵敏"
+			}
+		],
+		"驼背矫正器": [{
+				"title": "JDKS-5144-DS",
+				"name": "JDKS-5144-DS",
+				"url": "../img/posture/equipment1.png",
+				"detail": "超强续航"
+			},
+			{
+				"title": "JDKS-5240-DS",
+				"name": "JDKS-5240-DS",
+				"url": "../img/posture/equipment1.png",
+				"detail": "全新设计，传感更灵敏"
+			},
+			{
+				"title": "JDKS-5240-DS",
+				"name": "JDKS-5240-DS",
+				"url": "../img/posture/equipment1.png",
+				"detail": "全新设计，传感更灵敏"
+			},
+			{
+				"title": "JDKS-5240-DS",
+				"name": "JDKS-5240-DS",
+				"url": "../img/posture/equipment1.png",
+				"detail": "全新设计，传感更灵敏"
+			},
+			{
+				"title": "JDKS-6240-DS",
+				"name": "JDKS-6240-DS",
+				"url": "../img/posture/equipment1.png",
+				"detail": "全新设计，传感更灵敏"
+			}
+		]
+	}
+}

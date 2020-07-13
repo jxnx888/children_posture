@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>儿童体态检测</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="misapplication-tap-highlight" content="no" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<meta http-equiv="X-UA-Compatible" content="IE=11,chrome=1">
+		<link rel="stylesheet" type="text/css" href="../css/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/myaccount.css" />
+	</head>
+	<body>
+		<div class="main_wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 nav_title">我的</div>
+					<div class="col-xs-12">
+						<div class="app_notification">
+							<div class="col-xs-8">
+								<i class="iconfont">&#xe672;</i>
+								打开通知，健康数据定时提醒~
+							</div>
+							<div class="col-xs-4 text-right">
+								<div class="open_notification text-center">去开启</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 user_wrapper">
+						<div class="row user_list">
+							<div class="each_user_wrapper col-xs-4 padding-right5">
+								<div class="each_user user_each" onclick="eidtUser(this)">
+									<div class="row">
+										<div class="col-xs-6 user_name padding-right5">张三</div>
+										<div class="col-xs-6 user_type padding-left5">高低肩</div>
+										<div class="col-xs-12 user_result">6cm</div>
+										<div class="col-xs-8 padding-right5">本周数据</div>
+										<div class="col-xs-4 iconfont padding-left5">&#xe7eb;</div>
+									</div>
+								</div>
+							</div>
+							<div class="each_user_wrapper col-xs-4 padding25">
+								<div class="each_user user_each" onclick="eidtUser(this)">
+									<div class="row">
+										<div class="col-xs-6 user_name padding-right5">张三</div>
+										<div class="col-xs-6 user_type padding-left5">高低肩</div>
+										<div class="col-xs-12 user_result">6cm</div>
+										<div class="col-xs-8 padding-right5">本周数据</div>
+										<div class="col-xs-4 iconfont padding-left5">&#xe7eb;</div>
+									</div>
+								</div>
+							</div>
+							<div class="each_user_wrapper col-xs-4 padding-left5" id="addUserWrapper">
+								<div class="each_user add_user" onclick="addNewMember(this)">
+									<div class="add_icon">+</div>
+									<div class="add_btn">添加成员</div>
+								</div>
+							</div>
+							<div class="col-xs-12 note text-left">*最多添加三个</div>
+						</div>
+					</div>
+					<div class="col-xs-12 each_function_wrapper clearfix">
+						<a href="setting.html">
+						<div class="each_function setting">
+							<div class="func_icon iconfont text-left">&#xe60b;</div>
+							<div class="func_arrow iconfont text-right">&#xe7eb;</div>
+							<div class="func_name text-left">设置</div>
+						</div>
+						</a>
+						<div class="each_function equipment" onclick="showEquipment(0)">
+							<div class="func_icon iconfont text-left">&#xe7c4;</div>
+							<div class="func_arrow iconfont text-right">&#xe7eb;</div>
+							<div class="func_name text-left">智能穿戴设备</div>
+						</div>
+						<a href="tel:123">
+							<div class="each_function contact">
+								<div class="func_icon iconfont text-left">&#xe618;</div>
+								<div class="func_arrow text-right">784-451245</div>
+								<div class="func_name text-left">服务热线</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="user_info">
+			<div class="container">
+				<div class="popChange_bg" onclick="ChangeWindow(1)"></div>
+				<div class="popChange row">
+					<div class="change_window change_user_name">
+						<div class="col-xs-12 change_title">修改用户名</div>
+						<div class="close_change_window" onclick="ChangeWindow(1)">X</div>
+						<div class="col-xs-12">
+							<input type="text" id="changedUserName" class="change_input" oninput="insertName(this)" onkeyup="this.value=this.value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g ,'')">
+							<div class="clear_input" onclick="clearName()"><i class="iconfont">&#xe844;</i></div>
+						</div>
+						<div class="col-xs-12">
+							<div class="change_done changing_btn">完成</div>
+						</div>
+					</div>
+				</div>
+				<div class="row nav">
+					<div class="col-xs-2 text-left">
+						<div class="top_back iconfont" onclick="hideEdit()">&#xe7ec;</div>
+					</div>
+					<div class="col-xs-8 nav_title"></div>
+					<div class="col-xs-2 text-right save_btn paddingLeft0" onclick="submitChange()">保存</div>
+				</div>
+				<div class="row infor_list">
+					<div class="col-xs-12 each_info" id="userNameWrapper" onclick="ChangeWindow(0)">
+						<div class="each_wrapper">
+							<div class="row">
+								<div class="col-xs-3 text-left paddingRight0">用户名</div>
+								<div class="col-xs-9 text-right paddingLeft0"><i id="userName">老大</i><i class="iconfont">&#xe7eb;</i></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 each_info" id="genderWrapper">
+						<div class="each_wrapper">
+							<div class="row">
+								<div class="col-xs-3 text-left paddingRight0">性别</div>
+								<div class="col-xs-9 text-right paddingLeft0"><i id="userGender">男</i><i class="iconfont">&#xe7eb;</i></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 each_info" id="typeWrapper">
+						<div class="each_wrapper">
+							<div class="row">
+								<div class="col-xs-3 text-left paddingRight0">待矫正类型</div>
+								<div class="col-xs-9 text-right paddingLeft0"><i id="userMonitorType">高低肩</i><i class="iconfont">&#xe7eb;</i></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 each_info" id="heightWrapper">
+						<div class="each_wrapper">
+							<div class="row">
+								<div class="col-xs-3 text-left paddingRight0">身高</div>
+								<div class="col-xs-9 text-right paddingLeft0"><i id="userHeight" class="unset">未设置</i><i class="iconfont">&#xe7eb;</i></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 each_info" id="weightWrapper">
+						<div class="each_wrapper">
+							<div class="row">
+								<div class="col-xs-3 text-left paddingRight0">体重</div>
+								<div class="col-xs-9 text-right paddingLeft0"><i id="userWeight">40KG</i><i class="iconfont">&#xe7eb;</i></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 each_info">
+						<div class="each_wrapper">
+							<div class="row">
+								<div class="col-xs-3 text-left paddingRight0">观察时间</div>
+								<div class="col-xs-9 text-right paddingLeft0"><i id="userMTime">7：20AM-10:00PM</i><i class="iconfont">&#xe7eb;</i></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 each_info">
+						<div class="each_wrapper last_each_wrapper">
+							<div class="row">
+								<div class="col-xs-3 text-left paddingRight0">高低肩数据</div>
+								<div class="col-xs-9 text-right paddingLeft0"><i id="userData">偏差6cm，中度症状</i><i class="iconfont">&#xe7eb;</i></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="equipment_list container">
+			<div class="nav row">
+				<div class="back_main iconfont"  onclick="showEquipment(1)">&#xe7ec;</div>
+				<div class="col-xs-12 text-center this_title">拥有哪一种设备</div>
+			</div>
+			<div class="list_wrapper"></div>
+		</div>
+		<div class="bottom_nav">
+			<div class="col-xs-4">
+				<a href="./monitoring.html">
+					<div class="row each_menu">
+						<div class="iconfont">&#xe860;</div>
+						<div class="nav_title">记录</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-xs-4">
+				<a href="./found.html">
+					<div class="row each_menu">
+						<div class="iconfont">&#xe861;</div>
+						<div class="nav_title">发现</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-xs-4">
+				<div class="row each_menu active_nav">
+					<div class="iconfont">&#xe862;</div>
+					<div class="nav_title">我的</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/select.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/mui.picker.min.js"></script>
+	<script src="../js/myaccount.js" type="text/javascript" charset="utf-8"></script>
+</html>

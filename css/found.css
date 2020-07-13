@@ -1,0 +1,41 @@
+.nav_title{line-height: .44rem;background-color: #FFF;}
+body{background-color: #f4f6f8;}
+.top_baiKe_wrapper{padding: 0;}
+#topBaiKe img{height: 1.90rem;;}
+.each_suggest {margin-top: .1rem;}
+.sugg_title{font-weight: bold;font-size: .15rem;line-height: .4rem;}
+.video_img{width:100%;}
+.video_title{font-size:.14rem;margin-top:.13rem}
+.video_time{font-size:.12rem;color:#9EA6B1;line-height: .3rem;}
+.video_time i {color:#93B0D2;padding-right: .05rem;}
+.video_list_wrapper{border-radius: 5px;background-color: #FFF;margin:0 .15rem;padding-bottom: .1rem;}
+.each_wrapper { padding-top: .1rem; }
+
+.this_info_wrapper{background-color: #FFF;border-radius: 4px;position: relative;margin: .1rem 0;}
+.this_info{position: absolute;top: 0;bottom: 0;left: 15px;height: 100%;}
+.this_name,.this_tag{float: left;}
+.this_name{font-size: .14rem;line-height: .3rem;}
+.this_tag{color:#16B953;font-style: italic;font-size: .12rem;padding-left: .1rem;line-height: .3rem;}
+.contact{color:#FFF;background:#0076FF;height: .2rem;line-height: .2rem;border-radius: .1rem;width: 70px; font-size: 0.12rem;}
+.contact .iconfont{font-size: .12rem;padding-left: .05rem;}
+.introduction{margin-top: .1rem; font-size: .12rem;width: 50%;overflow: hidden; display: -webkit-box; -ms-text-overflow: ellipsis; text-overflow: ellipsis; -webkit-line-clamp: 5; line-clamp: 5; -webkit-box-orient:vertical; white-space:normal ;}
+
+
+#massagistList{margin-bottom:.4rem}
+#massagistList .col-xs-6{margin-bottom:.15rem}
+.info_wrapper {border-radius: 8px;border:1px solid rgba(213,213,218,1);}
+.each_massagist img {width:100%;}
+.each_info{height: .4rem;line-height: .4rem; padding: 0 .1rem;}
+.massagist_name{float:left;font-size: .13rem;color:#333;}
+.massagist_time{float:left;font-size: .12rem;color:##999999;padding-left: .1rem;}
+.massagist_phone{float:right;font-size: .12rem;color:#93B0D2;}
+
+/* 视频 */
+#videoPopUp{display: none;position:fixed;top:0;right: 0;left: 0;bottom: 0;background: #000;z-index:9;}
+.video-js { width: 100%; position: fixed; z-index: 10; left: 50%; right: 0; top: 50%; transform: translate(-50%,-50%); }
+.video_close { position: absolute; top: .15rem; right: .15rem; font-size: .25rem; z-index: 11;}
+
+@media only screen and (max-width:320px){
+	.this_info{left:10px}
+	.introduction{-webkit-line-clamp: 4; line-clamp: 4;}
+}

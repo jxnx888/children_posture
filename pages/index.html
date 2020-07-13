@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>儿童体态检测</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="misapplication-tap-highlight" content="no" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<meta http-equiv="X-UA-Compatible" content="IE=11,chrome=1">
+		<link rel="stylesheet" type="text/css" href="../css/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/home.css" />
+	</head>
+	<body>
+		<div class="main_wrapper">
+			<div class="container">
+				<div class="row top_line">
+					<div class="col-xs-12 text-right">
+						<div class="prev_step" onclick="prevStep()">上一步</div>
+					</div>
+					<div class="col-xs-12 top_title">设置监测用户的健康资料</div>
+					<div class="col-xs-12 sub_title">准确的填写数据，后期跟踪更精准</div>
+				</div>
+				<div class="row first_info">
+					<div class="col-xs-12 name_input">
+						<input type="text" class="childName" id="childName" placeholder="请输入检测人名称" oninput="clearValid()" onfocus="clearValid()">
+						<div class="validation name_valid">请输入检测人名称</div>
+					</div>
+					<div class="col-xs-6 text-center">
+						<div class="gender" onclick="selectCurrent(this,0)">
+							<div class="male">
+								<div class="iconfont">&#xe69a;</div>
+								<div class="title_sex boy">男孩</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6 text-center">
+						<div class="gender" onclick="selectCurrent(this,0)">
+							<div class="female">
+								<div class="iconfont">&#xe615;</div>
+								<div class="title_sex girl">女孩</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 validation gender_valid">请选择您的性别</div>
+					<div class="col-xs-12">
+						<div class="next_btn margin_50" onclick="nextStep()">下一步</div>
+					</div>
+				</div>
+				<div class="row second_info">
+					<div class="col-xs-6">
+						<div class="posture shoulder" onclick="selectCurrent(this,1)"></div>
+						<div class="postrue_name">高低肩</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="posture kyphosis" onclick="selectCurrent(this,1)"></div>
+						<div class="postrue_name">高低肩</div>
+					</div>
+					<div class="col-xs-12 validation posture_valid">请选择检测类型</div>
+					<div class="col-xs-12">
+						<div class="next_btn margin_100" onclick="downSubmit()">完成</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript">
+		var timeOut;
+		var childName;
+		var activeGender;
+		var activePosture;
+
+		function selectCurrent(obj, type) { //type  0: gender 1: shouder or kyphosis
+			clearValid();
+			if (type == 0) {
+				$(".active_gender").removeClass("active_gender");
+				$(obj).addClass("active_gender");
+			} else if (type == 1) {
+				$(".active_posture").removeClass("active_posture");
+				$(obj).addClass("active_posture");
+			}
+		}
+
+		function nextStep() {
+			childName = $("#childName").val();
+			activeGender = $(".active_gender");
+			if (!childName) {
+				$(".name_valid").css("visibility","visible");
+				timeOut = setTimeout(function() {
+					$(".name_valid").css("visibility","hidden");
+				}, 1500)
+			} else {
+				if (activeGender.length == 0) {
+					$(".gender_valid").show();
+					$(".gender_valid").css("visibility","visible");
+					timeOut = setTimeout(function() {
+						$(".gender_valid").css("visibility","hidden");
+					}, 1500)
+				} else {
+					clearValid();
+					$(".first_info").hide();
+					$(".second_info,.prev_step").show();
+					$(".top_title").addClass("second_page");
+				}
+			}
+
+		}
+		function prevStep(){
+			clearValid();
+			$(".first_info").show();
+			$(".second_info,.prev_step").hide();
+			$(".top_title").removeClass("second_page");
+		}
+		function downSubmit(){
+			clearValid()
+			activePosture = $(".active_posture");
+			if(activePosture.length == 0){
+				$(".posture_valid").css("visibility","visible");
+				timeOut = setTimeout(function() {
+					$(".posture_valid").css("visibility","hidden");
+				}, 1500)
+			}
+			else{
+				window.location.href = '../pages/bluetooth.html'
+			}
+		}
+		function clearValid() {
+			$(".name_valid,.gender_valid,.posture_valid").css("visibility","hidden");
+			clearTimeout(timeOut);
+		}
+	</script>
+</html>

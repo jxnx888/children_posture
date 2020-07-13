@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>儿童体态检测</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="misapplication-tap-highlight" content="no" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<meta http-equiv="X-UA-Compatible" content="IE=11,chrome=1">
+		<link rel="stylesheet" type="text/css" href="../css/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/monitoring.css" />
+	</head>
+	<body>
+		<div class="main_wrapper">
+			<div class="container">
+				<div class="row monitoring">
+					<div class="nav name_select">
+						<div id="currentName" class="iconfont" onclick="showNameList()">张三 &#xe7ee;</div>
+						<div class="name_list" id="nameList">
+							<div class="each_name" onclick="getCurrentInfo(this)">张三</div>
+							<div class="each_name" onclick="getCurrentInfo(this)">李四</div>
+							<div class="each_name" onclick="getCurrentInfo(this)">王五</div>
+						</div>
+					</div>
+					<div class="monitor_state">
+						<img src="../img/posture/sample/sample.png" alt="">
+						<div class="equipment_status"><i>&nbsp</i>在线</div>
+						<div class="deviation">
+							<div class="deviation_title">偏差</div>
+							<div id="deviation">3 <i>cm</i></div>
+						</div>
+					</div>
+				</div>
+				<div class="row btns">
+					<div class="btn_wrapper clearfix">
+						<div class="btn_each real_time active_btn">实时运动</div>
+						<a href="./data_analysis.html">
+						<div class="btn_each data_analysis">数据分析</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom_nav">
+			<div class="col-xs-4">
+				<div class="row each_menu active_nav">
+					<div class="iconfont">&#xe860;</div>
+					<div class="nav_title">记录</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<a href="./found.html">
+				<div class="row each_menu">
+					<div class="iconfont">&#xe861;</div>
+					<div class="nav_title">发现</div>
+				</div>
+				</a>
+			</div>
+			<div class="col-xs-4">
+				<a href="./myaccount.html">
+				<div class="row each_menu">
+					<div class="iconfont">&#xe862;</div>
+					<div class="nav_title">我的</div>
+				</div>
+				</a>
+			</div>
+		</div>
+	</body>
+	<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		function getCurrentInfo(obj){
+			var currentName = $(obj).text();
+			$("#currentName").html(currentName+" &#xe7ee;")
+			$("#nameList").fadeOut(300);
+		}
+		function showNameList(){
+			$("#nameList").fadeToggle(300);
+		}
+		function showRTDA(type){
+			$(".active_btn").removeClass("active_btn");
+			if(type == 0){
+				$(".monitor_state").show();
+				
+				$(".real_time").addClass("active_btn");
+			}
+			else if(type==1){
+				$(".monitor_state").hide();
+				$(".data_analysis").addClass("active_btn");
+			}
+		}
+	</script>
+</html>

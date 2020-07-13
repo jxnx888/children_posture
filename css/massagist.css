@@ -1,0 +1,16 @@
+.main_wrapper {position: relative;}
+.top_img{position:relative;}
+.top_back { position: absolute; top: 10px; left: 10px; font-size: .2rem; color: #333; font-weight: bold; }
+.mmassagist_img{width: 100%;}
+.phone_number{width:.6rem; height:.6rem;position:absolute;bottom: -.3rem;right: .24rem; background:rgba(255,255,255,1); box-shadow:0px 0px 20px 0px rgba(45,64,83,0.2); border-radius:50%;line-height: .6rem;z-index: 1;}
+.phone_number .iconfont{font-size:.25rem;color:#0076FF;}
+
+.massagist_info{position:relative;top:-.1rem; border-radius:10px 10px 0 0;background-color: #FFF;}
+#massagistName{font-size: .18rem;color:#000;margin-top: .2rem;}
+.good_at_area{font-size: .13rem;color:#999;margin-top: .15rem;margin-bottom:.12rem;}
+.each_tag{float:left;background:#F5F4F9;border-radius:5px; line-height: .2rem;margin-right: .1rem;font-size: .12rem;padding:.02rem .1rem;color:#93B0D2;}
+
+.sub_title_wrapper{font-size: .14rem;color:#000;position:relative;height: .2rem;margin: .24rem 0 .2rem 0;}
+.sub_title_wrapper .sub_title{position: absolute;left: 0;top: 0;right: 0;z-index: 2;}
+.sub_title_wrapper .sub_title_bg{position: absolute;left: 0;bottom: 0;right: 0;background-color: #50E5A8;width: .55rem;height:.1rem;z-index:1}
+.sub_content{font-size: .12rem;color:#666;;}

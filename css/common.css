@@ -1,0 +1,66 @@
+* {
+	-webkit-user-select: none;
+	-ms-touch-select: none;
+}
+html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-family: Arial;
+	font-size:16px;
+	color: #333;
+	background-color: #FFF;
+	text-align: center;
+	-webkit-touch-callout:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	-webkit-text-size-adjust:none;
+}
+.heading {
+	margin:0 1em;
+	text-align:left;
+}
+.des {
+	padding: 0 1em;
+	text-align:left;
+	text-indent: 2em;
+	word-break: break-all;
+}
+.logo {
+	width: 100%;
+	text-align: center;
+}
+
+html{font-size:625%}
+* { -webkit-touch-callout:none; -webkit-user-select:none; -khtml-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;-moz-touch-callout:none;-ms-touch-callout:none;touch-callout:none;}
+*{font-family: MicrosoftYaHei!important;}
+:root { --origin-safe-area-inset-top: 0px; --origin-safe-area-inset-bottom: 0px; --safe-area-inset-top: var(--windvane-safe-area-inset-top, var(--origin-safe-area-inset-top)); --safe-area-inset-bottom: var(--windvane-safe-area-inset-bottom, var(--origin-safe-area-inset-bottom)); }
+i {font-style: normal;}
+a,.a:visited,a:active,a:link{text-decoration: none;color:#333}
+
+/* 底部导航 */
+.bottom_nav{height: .49rem;position:fixed;bottom: 0;right: 0;left: 0;background:#FFF;z-index:2;}
+.bottom_nav *{color:#93B0D2;}
+.bottom_nav .nav_title{font-size:.12rem;line-height: .17rem;}
+.bottom_nav .active_nav *{color:#0076FF;}
+.bottom_nav .each_menu .iconfont{font-size:.25rem;line-height: 0.3rem;}
+/* 底部导航 end*/
+
+.next_btn { width: 1.62rem; height: .4rem; background: #0076FF; border-radius: .2rem; color: #FFF; line-height: .4rem; margin: auto; }
+
+.padding-right5{padding-right: 5px;}
+.padding-left5{padding-left:5px;}
+.padding25{padding-left:7.5px;padding-right:7.5px}
+.padding0{padding:0}
+.paddingRight0{padding-right:0;}
+.paddingLeft0{padding-left:0;}
+
+.color_red{color:red;}
+
+/* 防止弹窗打开.底层继续滑动 */
+.has_popup{overflow: hidden;} 
+/* 防止弹窗打开.底层继续滑动 */

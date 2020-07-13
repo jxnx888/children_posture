@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .rol {
+            width: 100%;
+            height: 100%;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100%;
+            overflow-x: scroll;
+            white-space: nowrap;
+        }
+
+        .one {
+            position: relative;
+            width: 48%;
+            height: 88%;
+            margin-right: 1%;
+            display: inline-block;
+        }
+
+        .one img {
+            width: 100%;
+            height: 80%;
+        }
+
+        .text {
+            position: absolute;
+            font-size: 18px;
+            color: #FFF;
+            top: 83%;
+            left: 5%;
+            /* width: 55%;
+      white-space: pre-wrap; */
+        }
+
+        .zol {
+            width: 100%;
+            height: 27%;
+            position: absolute;
+            top: 37%;
+            left: 0;
+        }
+
+        .videos {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 30%;
+            width: 92%;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+        }
+
+        .vclose {
+            position: absolute;
+            right: 1%;
+            top: 1%;
+            border-radius: 100%;
+            width: 25px !important;
+            height: 25px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rol">
+        <div class="banner">
+            <div class="one"
+                vpath="http://sucai.suoluomei.cn/sucai_zs/images/20190816141812-%E5%85%83%E6%B0%94%E5%B0%91%E5%A5%B3%E5%A6%86.png"
+                ipath="http://hpl-px-output.oss-cn-shenzhen.aliyuncs.com/mall_paparela/Public/xcwz/%E5%9B%9B%E6%AC%BE%E5%A6%86%E5%AE%B9%E6%95%99%E7%A8%8B%EF%BC%8C%E8%BD%BB%E6%9D%BEhold%E4%BD%8F%E5%90%84%E7%A7%8D%E5%9C%BA%E5%90%88/5%E5%88%86%E9%92%9F%E5%85%83%E6%B0%94%E5%B0%91%E5%A5%B3%E5%A6%86.mp4">
+                <img src="http://sucai.suoluomei.cn/sucai_zs/images/20190816141812-%E5%85%83%E6%B0%94%E5%B0%91%E5%A5%B3%E5%A6%86.png"
+                    alt="1">
+            </div>
+            <div class="one"
+                vpath="http://sucai.suoluomei.cn/sucai_zs/images/20190816141812-%E4%B8%AA%E6%80%A7%E6%BD%AE%E4%BA%BA%E5%A6%86.png"
+                ipath="http://hpl-px-output.oss-cn-shenzhen.aliyuncs.com/mall_paparela/Public/xcwz/%E5%9B%9B%E6%AC%BE%E5%A6%86%E5%AE%B9%E6%95%99%E7%A8%8B%EF%BC%8C%E8%BD%BB%E6%9D%BEhold%E4%BD%8F%E5%90%84%E7%A7%8D%E5%9C%BA%E5%90%88/%E4%B8%AA%E6%80%A7%E6%BD%AE%E4%BA%BA%E5%A6%86%EF%BC%8C%E6%8B%92%E7%BB%9D%E8%A2%AB%E6%A0%87%E7%AD%BE.mp4">
+                <img src="http://sucai.suoluomei.cn/sucai_zs/images/20190816141812-%E4%B8%AA%E6%80%A7%E6%BD%AE%E4%BA%BA%E5%A6%86.png"
+                    alt="2">
+            </div>
+        </div>
+        <div class="videos"></div>
+    </div>
+    <script src="http://cdn.suoluomei.com/common/js/jquery-2.1.4.min.js "></script>
+    <script>
+        $('.one').each(function () { //遍历视频列表
+            $(this).click(function () { //这个视频被点击后执行
+                var img = $(this).attr('vpath');//获取视频预览图
+                var video = $(this).attr('ipath');//获取视频路径
+                $('.videos').html("<video id=\"video\" poster='" + img + "' style='width: 100%;' src='" + video + "' preload=\"auto\" controls=\"controls\" autoplay=\"autoplay\"></video><img onClick=\"close1()\" class=\"vclose\" src=\"http://sucai.suoluomei.cn/sucai_zs/images/20190816134237-%E5%85%B3%E9%97%AD%20%281%29.png\"/>");
+                $('.videos').show();
+            });
+        });
+        function close1() {
+            var v = document.getElementById('video');//获取视频节点
+            $('.videos').css("display", "none");//点击关闭按钮关闭暂停视频
+            v.pause();
+            $('.videos').html();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+.main_wrapper{height:100%;background-color: #f4f6f8;margin-top:.44rem;}
+.nav {position:fixed;top: 0;right: 0;left: 0;font-size:.17rem;height:.44rem;line-height: .44rem; background-color: #FFFFFF;color:#333;z-index:2;}
+.row.item_info { padding: .15rem 0; }
+.equipment_img{max-height:2.28rem;width: 100%;max-width: 100%;margin-top: .3rem;}
+.notification{color:#999999;font-size:.12rem;}
+.left_info_wrapper {padding-right: 0;}
+.left_info{color:#9EA6B1;height: .25rem;line-height: .25rem;font-size:.12rem;background: #FFFFFF; border-radius: 13px;padding: 0 .1rem; margin: .1rem 0;width: max-content;}
+.info_list{float: left;margin: .07rem 0;height: 10px;width: 3px;background: #93B0D2;border-radius:2px;    margin-right: .04rem;}
+.info{font-size:.12rem;float: left;}
+.left_info.active_info .info_list{color:#1183FF;background-color: #1183FF;}
+.left_info.active_info .info{color:#4B566D;}
+.btn_connect{width:1.1rem;height:1.1rem;line-height: 1.1rem;color:#fff;font-size:.15rem;background-image: url(../img/posture/unconnect.png);background-repeat: no-repeat;background-size: contain;}
+.btn_connect.btn_connected{background-image: url(../img/posture/connected.png);}
+.equipment_detail {background:#FFF;margin:.25rem 15px;border-radius:5px ;}
+.equipment_detail .col-xs-5,.equipment_detail .col-xs-7{padding:0;}
+.equipment_detail .col-xs-5 i{color:#93B0D2;padding-right:.1rem;}
+.each_detail { height: .55rem; line-height: .54rem; margin: 0 10px; }
+.each_detail *{font-size:.15rem;}
+.each_detail:nth-of-type(1),.each_detail:nth-of-type(2),.each_detail:nth-of-type(3){ border-bottom: 1px solid #DEE4E9;}
+div#userName { padding-right: .2rem; }
+div#connectStatus i { display: inline-block; width: 10px; line-height: 10px; height: 10px; border-radius: 50%; color: red; background-color: red; margin: 0 3px; }
+.connect_status.connected{color:lawngreen;}
+div#connectStatus.connect_status.connected i{color:lawngreen;background-color:lawngreen ;}
+
+/* 底部导航 */
+.bottom_nav{height: .49rem;position:fixed;bottom: 0;right: 0;left: 0;background:#FFF;z-index:2;}
+.bottom_nav *{color:#93B0D2;}
+.bottom_nav .nav_title{font-size:.12rem;}
+.bottom_nav .active_nav *{color:#0076FF;}
+.bottom_nav .each_menu .iconfont{font-size:.25rem;line-height: 0.3rem;}
+/* 底部导航 end*/
+
+/* 设备清单 */
+.equipment_list {display: none; position: fixed;top: 0;bottom: 0;left: 0;right: 0;height: 100%;background:#fff;z-index:3;overflow: auto;}
+.equipment_list *{color:#333333;font-size: .17rem;}
+.equipment_list .nav{background-color: #EEEEEE;}
+.equipment_list .back_main{position: fixed;left:8px ;top: 0;font-size: .25rem;z-index: 3;}
+.equipment_list .list_wrapper{margin-top: .44rem;}
+.equipment_list .each_equipment { margin: auto; border-bottom: 1px solid #eee; }
+.equipment_list .equipment_title{height: .42rem;line-height: .42rem;font-size:.13rem;}
+.equipment_list .img_wrapper{position: relative; width: .54rem; height: .54rem;margin: 12px 0;}
+.equipment_list .img_wrapper img{position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; max-width: 100%; max-height: 100%;}
+.equipment_list .each_title{font-size:.14rem;line-height: 0.3rem; padding-top: .1rem;}
+.equipment_list .each_desc{font-size:.12rem;color:#9EA6B1;}
+/* 设备清单 end*/
+@media only screen and (max-width:320px){
+	.left_infor{padding-right: 0;}
+	.right_info {padding-left:20px;}
+	.each_detail *{font-size: .12rem;}
+}

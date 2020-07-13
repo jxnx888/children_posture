@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>儿童体态检测</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="misapplication-tap-highlight" content="no" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<meta http-equiv="X-UA-Compatible" content="IE=11,chrome=1">
+		<link rel="stylesheet" type="text/css" href="../css/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bluetooth.css" />
+	</head>
+	<body>
+		<div class="main_wrapper">
+			<div class="container">
+				<div class="nav row">
+					<div class="col-xs-3"></div>
+					<div class="col-xs-6 text-center this_title">启用蓝牙共享功能</div>
+					<div class="col-xs-3 jump_next" onclick="jumpTo(0)">跳过</div>
+				</div>
+				<div class="row content">
+					<div class="col-xs-12 text-center note">
+						您的手机需要启用蓝牙共享功能才能与设备连接
+					</div>
+					<div class="col-xs-12"><div class="bluetooth_img"></div></div>
+					<div class="col-xs-6 text-left later_connect" onclick="jumpTo(0)">稍后连接</div>
+					<div class="col-xs-6 text-right">
+						<div class="btn_start" onclick="jumpTo(1)">启用</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript">
+		function jumpTo(type){
+			switch(type){
+				case 0:
+					window.location.href = '../pages/equipment.html'
+					break;
+				case 1:
+					window.location.href = '../pages/equipment.html'
+					break;
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,28 @@
+.main_wrapper{width: 100%;;}
+.top_title{width:100%; height:.15rem; font-size:.17rem; color:#333333; line-height:.15rem;margin-top: .75rem;margin-bottom:.15rem;}
+.top_title.second_page {margin-top:.32rem;}
+.sub_title{color:#9EA6B1;font-size:.12rem;}
+.name_input{margin:.75rem 0 .45rem 0;}
+input#childName { border: none; border-bottom: 1px solid #E4E4E4; text-align: center; color: #9EA6B1; font-size: .13rem; width: 2.23rem; line-height: .3rem;outline: none;}
+
+.gender {width:1.2rem;height: 1.2rem;border-radius: 50%;border: 1px solid #E8E8E8;margin: auto;position: relative;}
+.title_sex{color:#333333;font-size: .12rem;}
+.gender .male,.gender .female {width:1.2rem;height: 1.2rem;border-radius: 50%;}
+.gender .male div, .gender .female div { transform: translate(-50%,-50%); position: relative; top: 40%; left: 50%; }
+.gender .male .iconfont,.gender .female .iconfont{font-size: .23rem;color: #B4C2D0;}
+.gender .male .title_sex,.gender .female .title_sex{font-size: .12rem;color: #333333;}
+.active_gender.gender{background:#0076FF;}
+.active_gender *{color:#FFFFFF!important;}
+.margin_50{margin-top:.19rem;}
+
+.second_info {display: none; margin-top: .8rem; }
+.second_info .col-xs-6{padding: 0 5px}
+.posture {width: 1.5rem;height: 1.5rem;border-radius: 50%;border: 1px solid #E8E8E8;margin: auto;background-repeat: no-repeat;background-size: contain;}
+.shoulder{background-image: url(../img/posture/shoulder.png);}
+.shoulder.active_posture{background-image: url(../img/posture/shoulder_active.png);}
+.kyphosis{background-image: url(../img/posture/kyphosis.png);}
+.kyphosis.active_posture{background-image: url(../img/posture/kyphosis_active.png);}
+.margin_100{margin-top:.7rem;}
+.validation{color:red;text-align: center;font-size: .12rem;line-height: .3rem;visibility:hidden}
+
+.prev_step{display:none;color:#007AFF;font-size: .15rem;line-height: 44px;}

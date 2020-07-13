@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>儿童体态检测</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="misapplication-tap-highlight" content="no" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<meta http-equiv="X-UA-Compatible" content="IE=11,chrome=1">
+		<link rel="stylesheet" type="text/css" href="../css/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/data_analysis.css" />
+	</head>
+	<body>
+		<div class="main_wrapper">
+			<div class="container">
+				<div class="row ">
+					<div class="nav name_select">
+						<div class="col-xs-4 text-left">
+							<div class="equipment_status"><i>&nbsp</i>在线</div>
+						</div>
+						<div class="col-xs-4">
+							<div id="currentYear" class="iconfont" onclick="showNameList()">2020 &#xe7ee;</div>
+							<div class="name_list" id="nameList">
+								<div class="each_name" onclick="getCurrentInfo(this)">2020</div>
+								<div class="each_name" onclick="getCurrentInfo(this)">2019</div>
+								<div class="each_name" onclick="getCurrentInfo(this)">2018</div>
+							</div>
+						</div>
+						<div class="col-xs-4"></div>
+
+					</div>
+
+				</div>
+				<div class="row data_analysis">
+					<!-- Swiper -->
+					<div class="swiper-container" id="monthes">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" onclick="changeMonth(1,this);">1月</div>
+							<div class="swiper-slide" onclick="changeMonth(2,this);">2月</div>
+							<div class="swiper-slide" onclick="changeMonth(3,this);">3月</div>
+							<div class="swiper-slide active_month" onclick="changeMonth(4,this);">4月</div>
+							<div class="swiper-slide" onclick="changeMonth(5,this);">5月</div>
+							<div class="swiper-slide" onclick="changeMonth(6,this);">6月</div>
+							<div class="swiper-slide" onclick="changeMonth(7,this);">7月</div>
+							<div class="swiper-slide" onclick="changeMonth(8,this);">8月</div>
+							<div class="swiper-slide" onclick="changeMonth(9,this);">9月</div>
+							<div class="swiper-slide" onclick="changeMonth(10,this);">10月</div>
+							<div class="swiper-slide" onclick="changeMonth(11,this);">11月</div>
+							<div class="swiper-slide" onclick="changeMonth(12,this);">12月</div>
+						</div>
+					</div>
+					<!-- Swiper -->
+					<div class="echart_wrapper clearfix">
+						<div class="top_info">
+							<div class="diff_cm">6.51cm<i>(右高,左低)</i></div>
+							<div class="result iconfont">&#xe7f2; 同比上月减少了<span id="finalCM">2.54cm</span></div>
+						</div>
+						<div class="week_peroid iconfont text-left col-xs-12">最近1周 &#xe7ee;</div>
+						<!-- Swiper -->
+						<div class="col-xs-12">
+							<div class="swiper-container" id="date">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" onclick="changeDate(1,this);">1</div>
+									<div class="swiper-slide" onclick="changeDate(2,this);">2</div>
+									<div class="swiper-slide" onclick="changeDate(3,this);">3</div>
+									<div class="swiper-slide active_date" onclick="changeDate(4,this);">4</div>
+									<div class="swiper-slide" onclick="changeDate(5,this);">5</div>
+									<div class="swiper-slide" onclick="changeDate(6,this);">6</div>
+									<div class="swiper-slide" onclick="changeDate(7,this);">7</div>
+									<div class="swiper-slide" onclick="changeDate(8,this);">8</div>
+									<div class="swiper-slide" onclick="changeDate(9,this);">9</div>
+									<div class="swiper-slide" onclick="changeDate(10,this);">10</div>
+									<div class="swiper-slide" onclick="changeDate(11,this);">11</div>
+									<div class="swiper-slide" onclick="changeDate(12,this);">12</div>
+								</div>
+							</div>
+						</div>
+						<!-- Swiper -->
+						<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+						<div class="col-xs-12 Echart_wrapper">
+							<div id="main"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row btns">
+					<div class="btn_wrapper clearfix">
+						<div class="btn_each real_time"><a href="./monitoring.html">实时运动</a></div>
+						<div class="btn_each data_analysis_btn active_btn">数据分析</div>
+					</div>
+				</div>
+				<div class="suggestions row">
+					<div class="trainning">
+						<div class="sugg_title"><i class="sugg_title_ico">::::</i>&nbsp推荐纠正训练&nbsp&nbsp<i class="sugg_title_ico">::::</i></div>
+						<div class="col-xs-12">
+							<div class="swiper-container" id="trainningVideo">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="video_main">
+											<div class="video-box"
+											vpath="../img/posture/sample/sample1.png"
+											ipath="https://img.kidsproductwholesale.com/importcsvimg/webpic/img/overseavide/mindy/520964008900.mp4">
+												<img class="video_cover_img" src="../img/posture/sample/sample1.png">
+											</div>
+										</div>
+										<div class="video_title col-xs-6">驼背改善 · 脊柱调整</div>
+										<div class="video_time col-xs-6 text-right">15分钟</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="video_main">
+											<div class="video-box"
+											vpath="../img/posture/sample/sample1.png"
+											ipath="https://img.kidsproductwholesale.com/importcsvimg/webpic/img/overseavide/mindy/520964008900.mp4">
+												<img class="video_cover_img" src="../img/posture/sample/sample1.png">
+											</div>
+										</div>
+										<div class="video_title col-xs-6">驼背改善 · 脊柱调整</div>
+										<div class="video_time col-xs-6 text-right">15分钟</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="video_main">
+											<div class="video-box"
+											vpath="../img/posture/sample/sample1.png"
+											ipath="https://img.kidsproductwholesale.com/importcsvimg/webpic/img/overseavide/mindy/520964008900.mp4">
+												<img class="video_cover_img" src="../img/posture/sample/sample1.png">
+											</div>
+										</div>
+										<div class="video_title col-xs-6">驼背改善 · 脊柱调整</div>
+										<div class="video_time col-xs-6 text-right">15分钟</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="videoPopUp" onclick="closeVideo()"></div>
+					</div>
+					<div class="massagist">
+						<div class="sugg_title"><i class="sugg_title_ico">::::</i>&nbsp推荐按摩师&nbsp&nbsp<i class="sugg_title_ico">::::</i></div>
+						<div class="col-xs-12">
+							<div id="massagistVideo" class="row">
+									<div class="col-xs-6 padding-right5">
+										<a href="./massagist.html?id=1">
+											<div class="info_wrapper clearfix">
+											<div class="each_massagist">
+												<img src="../img/posture/sample/sample2.png">
+											</div>
+											<div class="each_info clearfix">
+												<div class="massagist_name">魏师傅</div>
+												<div class="massagist_time">从业5年</div>
+												<div class="massagist_phone iconfont">&#xe86d;</div>
+											</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xs-6 padding-left5">
+										<a href="./massagist.html?id=1">
+											<div class="info_wrapper clearfix">
+											<div class="each_massagist">
+												<img src="../img/posture/sample/sample2.png">
+											</div>
+											<div class="each_info clearfix">
+												<div class="massagist_name">魏师傅</div>
+												<div class="massagist_time">从业5年</div>
+												<div class="massagist_phone iconfont">&#xe86d;</div>
+											</div>
+											</div>
+										</a>
+									</div>
+							</div>
+						</div>
+					</div>
+					<a href="./found.html">
+					<div class="view_more">查看更多>></div>
+					</a>
+				</div>
+
+			</div>
+		</div>
+		<div class="bottom_nav">
+			<div class="col-xs-4">
+				<div class="row each_menu active_nav">
+					<div class="iconfont">&#xe860;</div>
+					<div class="nav_title">记录</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<a href="./found.html">
+				<div class="row each_menu">
+					<div class="iconfont">&#xe861;</div>
+					<div class="nav_title">发现</div>
+				</div>
+				</a>
+			</div>
+			<div class="col-xs-4">
+				<a href="./myaccount.html">
+				<div class="row each_menu">
+					<div class="iconfont">&#xe862;</div>
+					<div class="nav_title">我的</div>
+				</div>
+				</a>
+			</div>
+		</div>
+	</body>
+	
+	<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/data_analysis.js" type="text/javascript" charset="utf-8"></script>
+</html>
